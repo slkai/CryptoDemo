@@ -22,6 +22,7 @@
 		E77E53872101B3C000928B0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E77E538A2101B3C000928B0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E77E538C2101B3C000928B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E77E539A2101D51100928B0D /* CryptoDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CryptoDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				E77E53872101B3C000928B0D /* Assets.xcassets */,
 				E77E53892101B3C000928B0D /* LaunchScreen.storyboard */,
 				E77E538C2101B3C000928B0D /* Info.plist */,
+				E77E539A2101D51100928B0D /* CryptoDemo-Bridging-Header.h */,
 			);
 			path = CryptoDemo;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 				TargetAttributes = {
 					E77E537C2101B3BF00928B0D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -280,6 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptoDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -288,6 +292,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CryptoDemo/CryptoDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CryptoDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -305,6 +312,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CryptoDemo/CryptoDemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

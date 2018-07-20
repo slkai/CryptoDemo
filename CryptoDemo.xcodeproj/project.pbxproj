@@ -22,6 +22,13 @@
 		E77E53872101B3C000928B0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E77E538A2101B3C000928B0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E77E538C2101B3C000928B0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E77E53A12101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53A32101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53A52101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53A72101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53A92101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53AB2101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		E77E53AD2101D94600928B0D /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +61,7 @@
 		E77E537F2101B3BF00928B0D /* CryptoDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E77E539F2101D91F00928B0D /* ModuleMaps */,
 				E77E53802101B3BF00928B0D /* AppDelegate.swift */,
 				E77E53822101B3BF00928B0D /* ViewController.swift */,
 				E77E53842101B3BF00928B0D /* Main.storyboard */,
@@ -62,6 +70,76 @@
 				E77E538C2101B3C000928B0D /* Info.plist */,
 			);
 			path = CryptoDemo;
+			sourceTree = "<group>";
+		};
+		E77E539F2101D91F00928B0D /* ModuleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A42101D94600928B0D /* appletvos */,
+				E77E53AC2101D94600928B0D /* appletvsimulator */,
+				E77E53AA2101D94600928B0D /* iphoneos */,
+				E77E53A22101D94600928B0D /* iphonesimulator */,
+				E77E53A62101D94600928B0D /* macosx */,
+				E77E53A82101D94600928B0D /* watchos */,
+				E77E53A02101D94600928B0D /* watchsimulator */,
+			);
+			path = ModuleMaps;
+			sourceTree = "<group>";
+		};
+		E77E53A02101D94600928B0D /* watchsimulator */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A12101D94600928B0D /* module.modulemap */,
+			);
+			path = watchsimulator;
+			sourceTree = "<group>";
+		};
+		E77E53A22101D94600928B0D /* iphonesimulator */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A32101D94600928B0D /* module.modulemap */,
+			);
+			path = iphonesimulator;
+			sourceTree = "<group>";
+		};
+		E77E53A42101D94600928B0D /* appletvos */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A52101D94600928B0D /* module.modulemap */,
+			);
+			path = appletvos;
+			sourceTree = "<group>";
+		};
+		E77E53A62101D94600928B0D /* macosx */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A72101D94600928B0D /* module.modulemap */,
+			);
+			path = macosx;
+			sourceTree = "<group>";
+		};
+		E77E53A82101D94600928B0D /* watchos */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53A92101D94600928B0D /* module.modulemap */,
+			);
+			path = watchos;
+			sourceTree = "<group>";
+		};
+		E77E53AA2101D94600928B0D /* iphoneos */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53AB2101D94600928B0D /* module.modulemap */,
+			);
+			path = iphoneos;
+			sourceTree = "<group>";
+		};
+		E77E53AC2101D94600928B0D /* appletvsimulator */ = {
+			isa = PBXGroup;
+			children = (
+				E77E53AD2101D94600928B0D /* module.modulemap */,
+			);
+			path = appletvsimulator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +366,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/CryptoDemo/ModuleMaps/iphones";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/CryptoDemo/ModuleMaps/iphonesimulator";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,6 +386,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/CryptoDemo/ModuleMaps/iphones";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/CryptoDemo/ModuleMaps/iphonesimulator";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		E77E53AE2105744B00928B0D /* CommonCryptoModuleMap */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E77E53B12105744C00928B0D /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */;
+			buildPhases = (
+				E77E53B22105746100928B0D /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = CommonCryptoModuleMap;
+			productName = CommonCryptoModuleMap;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		E77E53812101B3BF00928B0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E53802101B3BF00928B0D /* AppDelegate.swift */; };
 		E77E53832101B3BF00928B0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E53822101B3BF00928B0D /* ViewController.swift */; };
@@ -13,6 +27,16 @@
 		E77E53882101B3C000928B0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E77E53872101B3C000928B0D /* Assets.xcassets */; };
 		E77E538B2101B3C000928B0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E77E53892101B3C000928B0D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E77E53B3210574BD00928B0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E77E53752101B3BF00928B0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E77E53AE2105744B00928B0D;
+			remoteInfo = CommonCryptoModuleMap;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E77E537D2101B3BF00928B0D /* CryptoDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +102,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E77E53B4210574BD00928B0D /* PBXTargetDependency */,
 			);
 			name = CryptoDemo;
 			productName = CryptoDemo;
@@ -97,6 +122,9 @@
 					E77E537C2101B3BF00928B0D = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
+					E77E53AE2105744B00928B0D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 				};
 			};
 			buildConfigurationList = E77E53782101B3BF00928B0D /* Build configuration list for PBXProject "CryptoDemo" */;
@@ -113,6 +141,7 @@
 			projectRoot = "";
 			targets = (
 				E77E537C2101B3BF00928B0D /* CryptoDemo */,
+				E77E53AE2105744B00928B0D /* CommonCryptoModuleMap */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +159,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E77E53B22105746100928B0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This if-statement means we'll only run the main script if the CommonCryptoModuleMap directory doesn't exist\n# Because otherwise the rest of the script causes a full recompile for anything where CommonCrypto is a dependency\n# Do a \"Clean Build Folder\" to remove this directory and trigger the rest of the script to run\nif [ -d \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\" ]; then\necho \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap directory already exists, so skipping the rest of the script.\"\nexit 0\nfi\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap\"\ncat <<EOF > \"${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap/module.modulemap\"\nmodule CommonCrypto [system] {\n    header \"${SDKROOT}/usr/include/CommonCrypto/CommonCrypto.h\"\n    export *\n}\nEOF";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E77E53792101B3BF00928B0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -141,6 +186,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E77E53B4210574BD00928B0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E77E53AE2105744B00928B0D /* CommonCryptoModuleMap */;
+			targetProxy = E77E53B3210574BD00928B0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E77E53842101B3BF00928B0D /* Main.storyboard */ = {
@@ -288,6 +341,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,8 +359,25 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LiMei.MeiJiaLove.CryptoDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(inherited) ${BUILT_PRODUCTS_DIR}/CommonCryptoModuleMap";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E77E53AF2105744C00928B0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E77E53B02105744C00928B0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -327,6 +398,15 @@
 			buildConfigurations = (
 				E77E53902101B3C000928B0D /* Debug */,
 				E77E53912101B3C000928B0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E77E53B12105744C00928B0D /* Build configuration list for PBXAggregateTarget "CommonCryptoModuleMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E77E53AF2105744C00928B0D /* Debug */,
+				E77E53B02105744C00928B0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
